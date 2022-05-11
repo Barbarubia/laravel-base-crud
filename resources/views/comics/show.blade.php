@@ -15,7 +15,7 @@
                     <p>{{ $comic->description }}</p>
                 </div>
                 <div>
-                    <h6>(Price: {{ $comic->price }} - Available from: {{ $comic->sale_date }})</h6>
+                    <h6>(Price: US$ {{ $comic->price }} - Available from: {{ $comic->sale_date }})</h6>
                 </div>
             </div>
         </div>
