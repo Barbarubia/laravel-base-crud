@@ -4,6 +4,11 @@
 
 @section('mainContent')
     <div class="container mt-5 mb-5">
+        <div class="row mb-5">
+            <div class="col d-flex justify-content-end">
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">Add a new comic</a>
+            </div>
+        </div>
         <div class="row g-4">
             @foreach ($comics as $comic)
                 <div class="col-2">
