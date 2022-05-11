@@ -37,7 +37,14 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Variabile inputForm per richiedere tutti i dati inseriti nel form della pagina comics.create
+        $inputForm = $request->all();
+
+        // Creazione della nuova riga nel database con i dati inseriti nel form
+        $newComic = Comic::create($inputForm);
+
+        // Redirect all'indice dei comics
+        return redirect()->route('comics.index');
     }
 
     /**

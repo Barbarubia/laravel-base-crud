@@ -6,7 +6,7 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col">
-                <form method="POST" action="{{ route('comics.store') }}">  {{-- TODO: compilare comics.store --}}
+                <form method="POST" action="{{ route('comics.store') }}">
                     @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
