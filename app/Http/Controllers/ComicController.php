@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+    // Parametri di validazione dei campi del form
+    protected $validationParameters = [
+        'title'             => 'required|unique:comics|max:100',
+        'description'       => 'required',
+        'thumb'             => 'required|url|max:250',
+        'price'             => 'required|numeric',
+        'series'            => 'required|max:100',
+        'sale_date'         => 'required|date',
+        'type'              => 'required|max:50'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +48,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        // Validazione dei dati inseriti
+        $request->validate($this->validationParameters);
+
         // Variabile inputForm per richiedere tutti i dati inseriti nel form della pagina comics.create
         $inputForm = $request->all();
 
