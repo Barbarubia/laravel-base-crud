@@ -6,7 +6,12 @@
     <div class="container mt-5 mb-5">
         <div class="row mb-5">
             <div class="col d-flex justify-content-end">
-                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Edit comic</a>
+                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary mx-3">Edit comic</a>
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">Delete Comic</button>
+                </form>
             </div>
         </div>
         <div class="row">
