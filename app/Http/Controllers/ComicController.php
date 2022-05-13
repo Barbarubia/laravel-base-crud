@@ -95,10 +95,29 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // Validazione dei dati del form modificati togliendo la proprietà "unique" del titolo
+        // $this->validationParameters = [
+        //     'title' => 'required|max:100',
+        // ];
+
+        $validationParameters = [
+            'title'             => 'required|max:100',
+            'description'       => 'required',
+            'thumb'             => 'required|url|max:250',
+            'price'             => 'required|numeric',
+            'series'            => 'required|max:100',
+            'sale_date'         => 'required|date',
+            'type'              => 'required|max:50'
+        ];
+
+        $request->validate($validationParameters);
+
+        // Modifica dei dati nel database
         $inputForm = $request->all();
 
         $comic->update($inputForm);
 
+        // Reindirizzamento alla pagina del comic
         return redirect()->route('comics.show', $comic->id);
     }
 
