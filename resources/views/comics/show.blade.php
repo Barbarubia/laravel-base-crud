@@ -4,6 +4,11 @@
 
 @section('mainContent')
     <div class="container mt-5 mb-5">
+        <div class="row mb-5">
+            <div class="col d-flex justify-content-end">
+                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Edit comic</a>
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <img class="w-100" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
