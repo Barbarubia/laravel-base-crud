@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="thumb" class="form-label">Image Thumb</label>
-                        <input type="text" class="form-control" id="thumb" name="thumb">
+                        <input type="text" class="form-control" id="thumb" name="thumb" value="https://picsum.photos/192/291">
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
