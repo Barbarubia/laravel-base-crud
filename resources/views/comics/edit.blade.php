@@ -50,6 +50,11 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div class="row mt-3 mb-5">
+                    <div class="col">
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Go back</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
