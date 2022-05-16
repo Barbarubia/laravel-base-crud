@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -95,22 +96,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        // Validazione dei dati del form modificati togliendo la proprietà "unique" del titolo
-        // $this->validationParameters = [
-        //     'title' => 'required|max:100',
-        // ];
-
-        $validationParameters = [
-            'title'             => 'required|max:100',
-            'description'       => 'required',
-            'thumb'             => 'required|url|max:250',
-            'price'             => 'required|numeric',
-            'series'            => 'required|max:100',
-            'sale_date'         => 'required|date',
-            'type'              => 'required|max:50'
+        // Validazione dei dati del form modificati ignorando la proprietà "unique" del titolo solo per la risorsa selezionata
+        $this->validationParameters['title'] = [
+            'required',
+            Rule::unique('comics')->ignore($comic),
+            'max:100'
         ];
 
-        $request->validate($validationParameters);
+        $request->validate($this->validationParameters);
 
         // Modifica dei dati nel database
         $inputForm = $request->all();
