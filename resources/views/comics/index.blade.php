@@ -7,6 +7,9 @@
         @if (session('created'))
             <div class="alert alert-success">{{ session('created') }}</div>
         @endif
+        @if (session('deleted'))
+            <div class="alert alert-danger">{{ session('deleted') }}</div>
+        @endif
         <div class="row mb-5">
             <div class="col d-flex justify-content-end">
                 <a href="{{ route('comics.create') }}" class="btn btn-primary">Add a new comic</a>
