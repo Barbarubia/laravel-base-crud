@@ -60,7 +60,7 @@ class ComicController extends Controller
         $newComic = Comic::create($inputForm);
 
         // Redirect all'indice dei comics
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('created', 'Comic created with success!');
     }
 
     /**

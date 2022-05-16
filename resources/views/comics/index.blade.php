@@ -4,6 +4,9 @@
 
 @section('mainContent')
     <div class="container mt-5 mb-5">
+        @if (session('created'))
+            <div class="alert alert-success">{{ session('created') }}</div>
+        @endif
         <div class="row mb-5">
             <div class="col d-flex justify-content-end">
                 <a href="{{ route('comics.create') }}" class="btn btn-primary">Add a new comic</a>
