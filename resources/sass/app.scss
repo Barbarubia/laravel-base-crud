@@ -6,3 +6,68 @@
     background-size: cover;
     height: 35rem;
 }
+
+
+
+// FOOTER
+footer {
+    background-image: url(/images/footer-bg.jpg);
+    background-size: cover;
+    .main-footer {
+        background-image: url(/images/dc-logo-bg.png);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-position-y: center;
+        background-size: 35rem;
+        display: flex;
+        justify-content: flex-start;
+        .footer-links-container {
+            padding: 2rem 0;
+            height: 35rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            list-style: none;
+            h3 {
+            text-transform: uppercase;
+                color: white;
+                margin-bottom: 1rem;
+            }
+            a {
+                text-decoration: none;
+                color: #828282;
+            }
+        }
+    }
+}
+
+.footer-navbar {
+    padding: 2rem 0;
+    background-color: #303030;
+    background-image: none;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            background: none;
+            border: 1px solid $primary;
+            padding: .8rem;
+            text-transform: uppercase;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .social-networks {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          h3 {
+            text-transform: uppercase;
+            color: $primary;
+          }
+        }
+    }
+}
