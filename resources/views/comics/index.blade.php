@@ -11,7 +11,7 @@
         </div>
         <div class="row g-4">
             @foreach ($comics as $comic)
-                <div class="col-2">
+                <div class="col-3">
                     <div class="card h-100">
                         <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         <div class="card-body d-flex flex-column justify-content-between">
@@ -22,5 +22,7 @@
                 </div>
             @endforeach
         </div>
+
+        {{ $comics->links() }}
     </div>
 @endsection
