@@ -4,6 +4,9 @@
 
 @section('mainContent')
     <div class="container mt-5 mb-5">
+        @if (session('modified'))
+            <div class="alert alert-success">{{ session('modified') }}</div>
+        @endif
         <div class="row mb-5">
             <div class="col d-flex justify-content-end">
                 <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary mx-3">Edit comic</a>

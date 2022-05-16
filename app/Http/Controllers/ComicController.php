@@ -111,7 +111,7 @@ class ComicController extends Controller
         $comic->update($inputForm);
 
         // Reindirizzamento alla pagina del comic
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('comics.show', $comic->id)->with('modified', 'Comic modified with success!');
     }
 
     /**
